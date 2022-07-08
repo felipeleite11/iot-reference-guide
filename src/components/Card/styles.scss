@@ -1,0 +1,85 @@
+$textColor: #424242;
+$componentsBackgroundColor: #fff;
+
+.card-vertical {
+	background-color: $componentsBackgroundColor;
+	border-radius: 10px;
+	padding: 14px 24px;
+	color: $textColor;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 30%);
+	height: fit-content;
+
+	h1 {
+		font-size: 18px;
+		font-weight: 700;
+		color: $textColor;
+	}
+
+	img {
+		width: 100%;
+		object-fit: cover;
+	}
+
+	p {
+		font-size: 14px;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		width: 100%;
+		overflow-x: auto;
+
+		li {
+			img {
+				width: 90px;
+				height: 90px;
+				object-fit: cover;
+			}
+		}
+	}
+}
+
+.card-horizontal {
+	background-color: $componentsBackgroundColor;
+	border-radius: 10px;
+	padding: 14px 24px;
+	color: $textColor;
+	display: flex;
+	box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 30%);
+	height: fit-content;
+
+	h1 {
+		font-size: 18px;
+		font-weight: 700;
+		color: $textColor;
+	}
+
+	img {
+		height: 120px;
+		object-fit: cover;
+	}
+
+	p {
+		font-size: 14px;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		width: 100%;
+		overflow-x: auto;
+
+		li {
+			img {
+				width: 90px;
+				height: 90px;
+				object-fit: cover;
+			}
+		}
+	}
+}

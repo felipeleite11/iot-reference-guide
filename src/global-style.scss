@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css?family=Catamaran");
+
+$gradientColor1: #cc5333;
+$gradientColor2: #23074d;
+$textColor: #424242;
+$componentsBackgroundColor: #fff;
+
+body {
+	background: $gradientColor2;
+	background: -webkit-linear-gradient(to right,
+			$gradientColor1,
+			$gradientColor2);
+	background: linear-gradient(to right, $gradientColor1, $gradientColor2);
+	color: $componentsBackgroundColor;
+	font-family: Catamaran, sans-serif;
+	overflow-x: hidden;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Catamaran, sans-serif;
+}
+
+img {
+	object-fit: contain;
+}
+
+.screen {
+	display: grid;
+	grid-template-columns: auto 4fr;
+	grid-template-rows: 60px auto 70px;
+	grid-template-areas:
+		"menu header"
+		"menu main"
+		"menu footer";
+	gap: 0 16px;
+}
+
+main {
+	grid-area: main;
+	padding: 0 18px;
+}
+
+.centered-image {
+	align-items: center;
+	justify-content: center;
+}
+
+details {
+	summary {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		list-style: none;
+		padding: 8px;
+		cursor: pointer;
+		border-radius: 6px;
+		font-weight: 700;
+		transition: 300ms;
+
+		svg {
+			display: none;
+			transition: 300ms;
+		}
+
+		&:hover {
+			background-color: #0002;
+
+			svg.down {
+				display: block;
+			}
+		}
+	}
+
+	> div {
+		padding: 0 8px;
+	}
+
+	&[open] {
+		svg.up {
+			display: block;
+		}
+		svg.down {
+			display: none;
+		}
+
+		&:hover {
+			svg.down {
+				display: none;
+			}
+		}
+	}
+}

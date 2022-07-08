@@ -1,0 +1,20 @@
+header {
+	grid-area: header;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 12px 8px;
+
+	.logo {
+		width: 40px;
+		height: 40px;
+	}
+
+	.avatar {
+		width: 36px;
+		height: 36px;
+		border-radius: 50%;
+		object-fit: cover;
+		border: solid 2px rgba(255, 255, 255, 0.6);
+	}
+}
