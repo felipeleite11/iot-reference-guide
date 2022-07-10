@@ -18,7 +18,7 @@ export const data = [
 			'Memória SRAM': '2KB',
 			'Memória EEPROM': '1KB',
 			'Velocidade clock': '16 MHz',
-			'Entrada de alimentação': 'cabo AB ou jack',
+			'Entrada de alimentação': 'cabo AB ou jack'
 		}
 	},
 	{
@@ -35,22 +35,49 @@ export const data = [
 			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzr4pgE5FzJlBkN9bgATfjjLhyM3ThqG2G8A&usqp=CAU",
 			'https://i0.wp.com/lojinha.vamuino.com.br/wp-content/uploads/esp01_ports.jpg?fit=900%2C900&ssl=1'
 		],
-		specifications: {}
+		specifications: {},
+		links: [
+			{
+				label: 'Link para adicionar a placa na Arduino IDE',
+				url: 'http://arduino.esp8266.com/stable/package_esp8266com_index.json'
+			},
+			{
+				label: 'Guia de instalação do ambiente',
+				url: 'https://blog.eletrogate.com/nodemcu-esp12-usando-arduino-ide-2'
+			}
+		]
 	},
 	{
 		id: 3,
 		title: 'Node MCU',
 		image: 'https://www.usinainfo.com.br/1017257-thickbox_default/nodemcu-v3-esp8266-esp-12e-iot-com-wifi.jpg',
 		text: 'Módulo NodeMCU é uma placa que foi criada para facilitar o desenvolvimento de aplicações para o módulo ESP8266 ESP-12. A alimentação dessa placa pode ser feita através do próprio conector USB (5,0V) ou então através do pino VIN (EXT) , com uma alimentação regulada de 5,0V.',
-		images: [],
-		specifications: {}
+		images: [
+			'https://raw.githubusercontent.com/nodemcu/nodemcu-devkit-v1.0/master/Documents/NODEMCU_DEVKIT_V1.0_PINMAP.png'
+		],
+		specifications: {
+			'Tensão de entrada': '4,5V - 9V',
+			'Tensão de entrada recomendada': '5V - 1A',
+			'Tensão de operação': '3,3V',
+			'Portas GPIO': '11',
+			'Entrada de alimentação': 'Cabo micro USB'
+		},
+		links: [
+			{
+				label: 'Link para o driver',
+				url: 'https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers'
+			}
+		]
 	},
 	{
 		id: 4,
 		title: 'Wemos D1 R32',
 		image: 'https://ae01.alicdn.com/kf/H92c9c459c6a54c86be2d7e39dca6eccfo/para-um-esp8266-r3-atmega328p-32mb-de-01.jpg',
 		text: 'Wemos D1 é uma plataforma de prototipagem que possui as mesmas dimensões do Arduino Uno R3. As diferenças mais básicas em relação ao Arduino são o conector micro USB e um ESP8266-12E.',
-		images: ['https://www.botnroll.com/img/cms/pinOut-R32-compressor.png'],
+		images: [
+			'https://www.botnroll.com/img/cms/pinOut-R32-compressor.png',
+			'https://jgamblog.files.wordpress.com/2018/02/esp8266-nodemcu-pinout.png'
+		],
 		specifications: {}
 	}
 ]

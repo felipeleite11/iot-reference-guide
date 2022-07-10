@@ -1,8 +1,10 @@
+import { BrowserRouter } from 'react-router-dom'
+
+import { Router } from './Router'
+
 import { Header } from './components/Header'
 import { Menu } from './components/Menu'
 import { Footer } from './components/Footer'
-
-import { Shields } from './pages/Shields'
 
 import './global-style.scss'
 
@@ -13,17 +15,19 @@ const user = {
 
 function App() {
   return (
-    <div className="screen">
-      <Header user={user} />
+    <BrowserRouter>
+      <div className="screen">
+        <Header user={user} />
 
-      <Menu user={user} />
+        <Menu user={user} />
 
-      <main>
-        <Shields />
-      </main>
+        <main>
+          <Router />
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </BrowserRouter>
   )
 }
 

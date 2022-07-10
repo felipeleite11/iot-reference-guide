@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { IoChevronDown, IoChevronUp, IoGridOutline, IoList } from 'react-icons/io5'
 import { GlassMagnifier } from 'react-image-magnifiers'
 
@@ -6,7 +7,6 @@ import './styles.scss'
 import { data } from '../../data'
 
 import { Card } from '../../components/Card'
-import { useEffect, useState } from 'react'
 
 export function Shields() {
 	const [gridCols, setGridCols] = useState<string>('3')
@@ -43,11 +43,15 @@ export function Shields() {
 	if(gridCols === '1') {
 		return (
 			<div className={`shield shields-col-${gridCols}`}>
-				<div className="options">
-					<IoGridOutline size={24} onClick={alternateGridCols} />
+				<aside>
+					<h1>Placas</h1>
+					
+					<div className="options">
+						<IoGridOutline size={24} onClick={alternateGridCols} />
 
-					<IoList size={24} onClick={setGridColsToList} />
-				</div>
+						<IoList size={24} onClick={setGridColsToList} />
+					</div>
+				</aside>
 
 				<div className="grid">
 					<div className="col">
@@ -78,6 +82,20 @@ export function Shields() {
 									</table>
 
 									<p>{item.text}</p>
+
+									{item.links ? (
+										<div className="links-container">
+											<h2>Links úteis</h2>
+
+											<ul>
+												{item.links.map(link => (
+													<li key={link.url}>
+														<a href={link.url} target="_blank" key={link.url}>{link.label}</a>
+													</li>
+												))}
+											</ul>
+										</div>
+									) : null}
 								</div>
 							</details>
 						))}
@@ -111,6 +129,20 @@ export function Shields() {
 									</table>
 
 									<p>{item.text}</p>
+
+									{item.links ? (
+										<div className="links-container">
+											<h2>Links úteis</h2>
+
+											<ul>
+												{item.links.map(link => (
+													<li key={link.url}>
+														<a href={link.url} target="_blank">{link.label}</a>
+													</li>
+												))}
+											</ul>
+										</div>
+									) : null}
 								</div>
 							</details>
 						))}
@@ -122,11 +154,15 @@ export function Shields() {
 
 	return (
 		<div className={`shield shields-col-${gridCols}`}>
-			<div className="options">
-				<IoGridOutline size={24} onClick={alternateGridCols} />
+			<aside>
+				<h1>Placas</h1>
+				
+				<div className="options">
+					<IoGridOutline size={24} onClick={alternateGridCols} />
 
-				<IoList size={24} onClick={setGridColsToList} />
-			</div>
+					<IoList size={24} onClick={setGridColsToList} />
+				</div>
+			</aside>
 
 			{data.map((item, i) => (
 				<Card 

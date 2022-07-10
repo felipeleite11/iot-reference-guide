@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import { IoMenuOutline } from 'react-icons/io5'
+import { useLocation } from 'react-router-dom'
 
 import './styles.scss'
 
@@ -10,6 +12,10 @@ interface MenuProps {
 }
 
 export function Menu({ user }: MenuProps) {
+	const { pathname } = useLocation()
+
+	console.log(pathname)
+
 	function handleToggleMenu() {
 		const drawer = document.querySelector(".drawer");
 		const mustOpen = !(drawer as Element).hasAttribute("open");
@@ -37,11 +43,16 @@ export function Menu({ user }: MenuProps) {
 
 				<ul>
 					<li>
-						<a href="#">Home</a>
+						<a href="/" className={pathname === '/' ? 'active' : ''}>Home</a>
 					</li>
 					<li>
-						<a href="#" className="active">
+						<a href="/shields" className={pathname === '/shields' ? 'active' : ''}>
 							Placas
+						</a>
+					</li>
+					<li>
+						<a href="/resistors" className={pathname === '/resistors' ? 'active' : ''}>
+							Resistores
 						</a>
 					</li>
 				</ul>
